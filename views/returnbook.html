@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./static/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="./static/home.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <a class="navbar-brand" href="#"><h2>INDIAN LIBRARY</h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="input-group" style="padding-left: 150px;">
+                  <div class="form-outline">
+                    <input id="search-input"  type="search" placeholder="Search" id="form1" class="form-control" />
+                  </div>
+                  <button id="search-button" type="button" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/books">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/addbook">AddBook</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/books/return?id=1">ReturnBook</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/myprofile?id=1">Profile</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/login">Login/Signup</a>
+                </li>
+                </div>
+                </li>
+              </ul>
+          
+            </div>
+          
+          </nav>
+          <div class="wrapper">
+            <div class="container"><br>
+                <h1 style="color: white;font-size: 80px;font-family: 'Times New Roman', Times, serif; text-align: center;" class="container pt-5 lead ">Return Book</h1>     
+            <div class="row">
+
+              <!-- Card 1 -->
+              {% for i in data %}
+              <div class="col-md-4">
+                  <div class="card mt-5">
+                      <div class="product-1 align-items-center p-2 text-center">
+                          <img src="./static/book1.webp" alt="" class="rounded" width="160" height="256">
+                          <h5 style="padding-top: 20px;">{{i["name"]}}</h5>
+  
+                          <!-- Book İnfo -->
+                          <div class="mt-3 info">
+                              <span class="text1 ">{{i["author"]}}</span>
+                              <span class="text1 d-block">Novel</span>
+                          </div>
+                          <div class="stock mt-3 text-dark">
+                              <span>In Stock</span>
+                              <div class="star mt-3 align-items-center">
+                                  <div class="fa fa-star"></div>
+                                  <div class="fa fa-star"></div>
+                                  <div class="fa fa-star"></div>
+                                  <div class="fa fa-star"></div>
+                                  <div class="fa fa-star"></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Button for Cards -->
+                      <a href="http://127.0.0.1:8000/books/return?id={{i['id']}}" onclick="message()">
+                      <div class="p-3 bg-success text-white text-center text-white mt-3 cursor" >
+                          <span class="text-uppercase" >Return this book</span>
+                      </div>
+                    </a>
+                  </div>
+              </div>
+              {% endfor %}
+  
+              <!-- Card 1 ends -->
+
+          </div>
+              </div>
+        </div>
+        <script>
+            function message()
+            {
+                alert("Book Returned")
+            }
+        </script>
+
+    </body>

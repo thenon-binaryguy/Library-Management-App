@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+h1, h2, h3, h4, h5{
+  
+  font-weight: bold;
+  color:white;
+}
+
+body {
+  color: #ffffff; /*  2b2d3c */
+  background-image: url(./bgimage1.jpg);
+  background-repeat: no-none;
+  min-height:100%;
+  backdrop-filter: blur(5px);
+  background-size: cover;
+}
+
+.action_menu_horizontal {
+  background: #2195f1;
+}
+
+
+
+nav.navbar {
+  z-index: 3000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+body {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+}
+
+.action_menu_horizontal {
+    background: black;
+}
+nav.navbar {
+    background-color: transparent;
+    z-index: 3000;
+}
+
+
+.cursor {
+  cursor: pointer; 
+
+}
+
+.card {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  transition: transform .3s;
+}
+
+
+.card-deck {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.card-deck .card {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+

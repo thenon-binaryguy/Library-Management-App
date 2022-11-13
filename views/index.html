@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" type="text/css" href="./static/index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <script src="./static/index.js" type="text/javascript"></script>
+    </head>
+
+{% if error %}
+    <script>
+      window.alert("{{error[0]}}")
+    </script>
+  {% endif %}
+<body>
+<div id="form">
+  <div class="container">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+      <div id="userform">
+        <div class="form-modal">
+            <div class="form-toggle">
+                <button id="login-toggle" onclick="toggleLogin()">log in</button>
+                <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+            </div>
+        
+            <div id="login-form">
+                <form action="http://127.0.0.1:8000/login" onsubmit="return validateForm()" method="post" name="login">
+                    <input type="email" name="username" placeholder="Enter email "/>
+                    <input type="password" name="password" placeholder="Enter password"/>
+                    <button type="submit"  class="btn login">login</button>
+                </hr>
+                
+                </form>
+            </div>
+        
+            <div id="signup-form">
+                <form action="http://127.0.0.1:8000/users" onsubmit="return validateForm1()" name="signup" method="post" enctype="multipart/form-data">
+                    <input type="email" name="email" placeholder="Enter your email"/>
+                    <input type="text" name="username" placeholder="Enter name"/>
+                    <input type="password" name="password" placeholder="Create password"/>
+                    <input type="number" name="age" id="quantity" placeholder="Enter age" name="quantity" min="10" max="100" step="1">
+                    <input type="file" name="img" id="img" name="img" placeholder="Upload Image" accept="image/*">
+                    <button type="submit" class="btn signup" onclick="msg()">create account</button>
+                    <!-- <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p> -->
+                    <hr/>
+                </form>
+            </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</div>
+<!-- Latest compiled and minified JavaScript -->
+</body>
