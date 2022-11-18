@@ -1,5 +1,5 @@
 # Library Management Application
-Library Management Application Created for Loopr AI Recruitment
+Library Management Application
 
 Website is hosted at :
 
