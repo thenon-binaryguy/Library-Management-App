@@ -17,6 +17,9 @@ This Web Application is a prototype for a Library Management system. It consists
 4. HTML , CSS and Javascript (for frontend)
 5. Bootstrap CSS ( to make frontend better)
 
+## Contribute
+
+This app was created with the mindset of building a simple web app . If you would like to make it better , please add a pull request , i will be happy to incorporate the changes
 
 ## How to Run the app ?
 
